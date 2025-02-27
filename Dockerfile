@@ -16,11 +16,11 @@ WORKDIR /app
 
 # Copy requirements file and install dependencies
 # (We copy this first to leverage Docker cache)
-COPY requirements.txt .
+COPY app/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application code
-COPY app.py .
+COPY app/app.py .
 
 # Document that the container will listen on port 5000
 EXPOSE 5000
